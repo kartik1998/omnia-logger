@@ -1,5 +1,6 @@
 const winston = require('winston');
 const os = require('os');
+const { getRequestContext } = require('../lib/requestContext');
 
 const { LOG_LEVEL_SEVERITY, LOG_LEVELS } = require('../config/logConfig');
 const MESSAGE = Symbol.for('message');
@@ -32,8 +33,10 @@ const appLogger = function logger(product, logFile) {
     level: LOG_LEVELS.DEBUG,
   });
   instance.logger.clear().add(fileTransport);
-
+  
   instance.log = (loglevel, message, requestId) => {
+    const context = getRequestContext();
+    if(context) requestId = context.requestId;
     const logMsg = {
       product: instance.product,
       message,
