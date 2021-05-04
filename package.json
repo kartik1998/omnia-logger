@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/kartik1998/omnia-logger#readme",
   "dependencies": {
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "uuid": "^8.3.2",
     "winston": "^3.3.3"
   }
 }
