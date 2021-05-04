@@ -9,7 +9,6 @@ const getDefaultLogFilePath = (processName = 'node') => `/var/log/omni/node/${pr
 
 const omniLogFormat = winston.format((info) => {
   const infoCopy = Object.assign({}, info);
-  console.log(info);
   infoCopy[MESSAGE] = `[${new Date().toISOString()}] [${info.level.toUpperCase()}] [${info.message.product}] [${os.hostname}] [${os.release}] [${info.message.requestId}] ${info.message.message}`;
   return infoCopy;
 })();
