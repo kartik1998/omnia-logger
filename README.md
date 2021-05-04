@@ -46,7 +46,6 @@ DEBUG: 'debug',
 ### Usage
 
 ```javascript
-
 const { appLogger, requestLogger } = require('omnia-logger');
 const app = require('express')();
 
@@ -58,17 +57,16 @@ app.get('/', (req, res) => {
 });
 
 app.listen(8080, () => console.log('listening on', 8080));
-
 ```
 
-* Sample app log will look like: 
+- Sample app log will look like:
 
 ```javascript
 [2021-05-04T17:30:37.560Z] [INFO] [apac-logger] [Users-MacBook-Air.local] [20.2.0] [49878975-6280-4cb4-9a33-c16377abc621] successfull api call
 ```
 
-* App log format:
+- App log format:
 
 ```javascript
-[DATE_ISO_FORMAT][LOG_LEVEL][PRODUCT_NAME][OS_HOSTNAME][OS_RELEASE][REQUEST_ID][LOG_MESSAGE]
+[DATE_ISO_FORMAT][LOG_LEVEL][PRODUCT_NAME][OS_HOSTNAME][OS_RELEASE][REQUEST_ID] LOG_MESSAGE
 ```
