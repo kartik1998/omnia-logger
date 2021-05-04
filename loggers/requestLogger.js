@@ -29,7 +29,6 @@ const logRequest = (req, res, next) => {
 
 const requestLogger = (app, product = 'omnia-req', opts) => {
   filename = opts.filename || `/var/log/omnia/requests/${product}.log`;
-  console.log(filename);
   app.use(addRequestId);
   app.use(logRequest);
 };
