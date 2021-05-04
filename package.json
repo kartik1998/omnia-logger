@@ -21,5 +21,14 @@
     "express": "^4.17.1",
     "uuid": "^8.3.2",
     "winston": "^3.3.3"
-  }
+  },
+  "keywords": [
+    "logging",
+    "winston",
+    "logger",
+    "simple-logging",
+    "logs",
+    "request-logs",
+    "app-logs"
+  ]
 }
