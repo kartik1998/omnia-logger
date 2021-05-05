@@ -19,7 +19,8 @@ const requestLogger = (app, product = 'omnia-req', opts) => {
     ],
     format: winston.format.combine(
       winston.format.json()
-    )
+    ),
+    responseWhitelist: ['body', 'headers']
   }));
 };
 
