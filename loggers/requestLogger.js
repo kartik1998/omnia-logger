@@ -23,6 +23,7 @@ const logRequest = (req, res, next) => {
     logObject.ip = req.ip;
     logObject.headers = req.headers;
     logObject.body = req.body;
+    logObject.originalUrl = req.originalUrl;
     logger.log('info', logObject);
     next();
 }
