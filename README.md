@@ -6,7 +6,7 @@
 
 ## Request Logger
 
-- Generates request logs writes a file with those logs.
+- Generates request, response logs writes a file with those logs.
 - Generates a request id for each request session which is visible in app logs. (Read section below on app logger)
 
 ### Usage
@@ -21,9 +21,7 @@ requestLogger(app, 'product-name', { filename: '/path/to/request.log' });
 - Sample request log will look something like:
 
 ```javascript
-{"id":"49878975-6280-4cb4-9a33-c16377abc621","ip":"::1","headers":
-{"host":"localhost:8080","user-agent":"curl/7.64.1","accept":"*/*"},
-"level":"info","service":"user-service"}
+{"meta":{"req":{"url":"/","headers":{"host":"localhost:8080","user-agent":"curl/7.64.1","accept":"*/*"},"method":"GET","httpVersion":"1.1","originalUrl":"/","query":{}},"res":{"body":{"id":"9c738c74-1eb8-43a9-bf78-57b2784b93fa"}},"responseTime":0},"level":"info","message":"HTTP GET /"}
 ```
 
 - requestLogger logs each request by default. logged keys are: ip, id, headers and body.
