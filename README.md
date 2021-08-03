@@ -21,7 +21,7 @@ requestLogger(app, 'product-name', { filename: '/path/to/request.log' });
 - Sample request log will look something like:
 
 ```javascript
-{"meta":{"req":{"url":"/","headers":{"host":"localhost:8080","user-agent":"curl/7.64.1","accept":"*/*"},"method":"GET","httpVersion":"1.1","originalUrl":"/","query":{}},"res":{"body":{"id":"9c738c74-1eb8-43a9-bf78-57b2784b93fa"}},"responseTime":0},"level":"info","message":"HTTP GET /"}
+{"meta":{"req":{"url":"/","headers":{"host":"localhost:8080","user-agent":"curl/7.64.1","accept":"*/*"},"method":"GET","httpVersion":"1.1","originalUrl":"/","query":{}},"res":{"body":{"id":"1628002145706-24bf4c89-eaff-4bf3-ad90-a6747e4cc8e8"}},"responseTime":0},"level":"info","message":"HTTP GET /"}
 ```
 
 - requestLogger logs each request by default. logged keys are: ip, id, headers and body.
@@ -60,7 +60,7 @@ app.listen(8080, () => console.log('listening on', 8080));
 - Sample app log will look like:
 
 ```javascript
-[2021-05-04T17:30:37.560Z] [INFO] [apac-logger] [Users-MacBook-Air.local] [20.2.0] [49878975-6280-4cb4-9a33-c16377abc621] successfull api call
+[2021-05-04T17:30:37.560Z] [INFO] [apac-logger] [Users-MacBook-Air.local] [20.2.0] [1628002145706-24bf4c89-eaff-4bf3-ad90-a6747e4cc8e8] successfull api call
 ```
 
 - App log format:
