@@ -51,6 +51,7 @@ const logger = new appLogger('product-name', 'path/to/app_log.log');
 requestLogger(app, 'product-name', { filename: '/path/to/req_log.log' });
 app.get('/', (req, res) => {
   logger.log(logger.LOG_LEVELS.INFO, 'successfull api call');
+  logger.info('successfull api call'); // info, warn, error, debug, trace
   return res.json({ id: req.id });
 });
 
