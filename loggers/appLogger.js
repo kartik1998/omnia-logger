@@ -15,7 +15,7 @@ const omniLogFormat = winston.format((info) => {
   return infoCopy;
 })();
 
-const appLogger = function logger(product, logFile) {
+const appLogger = function logger(product, logFile, logToConsole = false) {
   this.LOG_LEVELS = LOG_LEVELS;
   let instance = this;
   if (appLogger.prototype._singletonInstance) {
@@ -44,11 +44,19 @@ const appLogger = function logger(product, logFile) {
       requestId,
       level: loglevel,
     };
+    if (logToConsole) console.log(JSON.stringify(logMsg));
     instance.logger.log({
       level: loglevel,
       message: logMsg,
     });
   };
+
+  instance.info = instance.log.bind(instance, LOG_LEVELS.INFO);
+  instance.error = instance.log.bind(instance, LOG_LEVELS.ERROR);
+  instance.warn = instance.log.bind(instance, LOG_LEVELS.WARN);
+  instance.debug = instance.log.bind(instance, LOG_LEVELS.DEBUG);
+  instance.fatal = instance.log.bind(instance, LOG_LEVELS.FATAL);
+  instance.trace = instance.log.bind(instance, LOG_LEVELS.TRACE);
 
   return instance;
 };
