@@ -1,6 +1,6 @@
 {
   "name": "omnia-logger",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A logging library for nodejs. (To make logging simplistic and concise)",
   "main": "index.js",
   "scripts": {
